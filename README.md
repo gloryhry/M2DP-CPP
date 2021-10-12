@@ -1,4 +1,7 @@
 # M2DP-CPP
+
+[![license](https://img.shields.io/github/license/gloryhry/M2DP-CPP)](https://github.com/gloryhry/radar2pointcloud/blob/master/LICENSE)
+
 C++ implementation of the M2DP algorithm. Original repository can be found [here](https://github.com/LiHeUA/M2DP).
 
 ## Introduction:
