@@ -17,7 +17,7 @@
  * @Author: Glory Huang
  * @Date: 2021-10-09 14:40:43
  * @LastEditors: Glory Huang
- * @LastEditTime: 2021-10-12 17:43:18
+ * @LastEditTime: 2021-10-12 17:47:08
  * @Page: http://gloryhry.github.io/
  * @Github: https://github.com/gloryhry
  * @Description: file content
@@ -38,7 +38,9 @@ using namespace std;
 int main()
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr raw_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    string pc_file = "/home/glory/Downloads/M2DP/M2DP-python/rand.pcd";
+    string pc_file;
+    cout << "Input the PCD file path:" << enld;
+    cin >> pc_file;
     if (pcl::io::loadPCDFile<pcl::PointXYZ>(pc_file, *raw_cloud) == -1)
     {
         PCL_ERROR("Could NOT read file! \n");
