@@ -17,7 +17,7 @@
  * @Author: Glory Huang
  * @Date: 2021-10-09 14:40:43
  * @LastEditors: Glory Huang
- * @LastEditTime: 2021-10-12 17:47:08
+ * @LastEditTime: 2021-10-15 16:06:08
  * @Page: http://gloryhry.github.io/
  * @Github: https://github.com/gloryhry
  * @Description: file content
@@ -39,7 +39,7 @@ int main()
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr raw_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     string pc_file;
-    cout << "Input the PCD file path:" << enld;
+    cout << "Input the PCD file path:" << endl;
     cin >> pc_file;
     if (pcl::io::loadPCDFile<pcl::PointXYZ>(pc_file, *raw_cloud) == -1)
     {
@@ -48,7 +48,7 @@ int main()
     }
 
     M2DP m2dp(raw_cloud);
-    Eigen::MatrixXd desM2dp;
+    Eigen::Matrix<double, 1, 192> desM2dp;
     desM2dp = m2dp.get_m2dp_result();
     Eigen::MatrixXd A_m2dp;
     A_m2dp = m2dp.get_m2dp_A();

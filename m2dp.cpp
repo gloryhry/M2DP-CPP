@@ -16,7 +16,7 @@
  * @Author: Glory Huang
  * @Date: 2021-10-08 09:37:24
  * @LastEditors: Glory Huang
- * @LastEditTime: 2021-10-12 17:43:13
+ * @LastEditTime: 2021-10-15 15:59:45
  * @Page: http://gloryhry.github.io/
  * @Github: https://github.com/gloryhry
  * @Description: file content
@@ -126,7 +126,7 @@ Eigen::Matrix<double, 64, 128> M2DP::GetSignatureMatrix()
             // represent data in polar coordinates
             // vector<double> rho;
             // vector<double> theta;
-            vector<Eigen::Vector2d> points; // x: rho  y: theta
+            std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> points; // x: rho  y: theta
             for (int i = 0; i < pcx.rows(); i++)
             {
                 Eigen::Vector2d temp;
@@ -178,7 +178,7 @@ void M2DP::pol2cart(double rho, double phi, Eigen::Vector2d &vecN)
     vecN << x, y;
 }
 
-void M2DP::histogram2d(vector<Eigen::Vector2d> points, vector<double> thetaList, vector<double> rhoList, Eigen::MatrixXd &hist)
+void M2DP::histogram2d(std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> points, vector<double> thetaList, vector<double> rhoList, Eigen::MatrixXd &hist)
 {
     int row, col;
     row = thetaList.size() - 1;

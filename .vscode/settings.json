@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "*.txt": "makefile",
+        "core": "cpp",
+        "vector": "cpp"
+    }
+}

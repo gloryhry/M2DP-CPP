@@ -5,7 +5,7 @@ project(m2dp)
 set(CMAKE_BUILD_TYPE Release)
 
 add_compile_options(-std=c++11)
-
+add_compile_options(-std=c++14)
 
 # find_package(Boost REQUIRED COMPONENTS system)
 find_package(PCL 1.7 REQUIRED)

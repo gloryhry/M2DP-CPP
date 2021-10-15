@@ -13,7 +13,7 @@
  * @Author: Glory Huang
  * @Date: 2021-10-08 09:41:35
  * @LastEditors: Glory Huang
- * @LastEditTime: 2021-10-12 11:06:26
+ * @LastEditTime: 2021-10-15 15:59:34
  * @Page: https://xjtuglory.ml
  * @Github: https://github.com/gloryhry
  * @Description: file content
@@ -25,14 +25,15 @@
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
-
+#include <Eigen/StdVector>
 using namespace std;
 
 class M2DP {
 public:
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
     M2DP(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
     ~M2DP() = default;
-    Eigen::Matrix<double, 192, 1> get_m2dp_result()
+    Eigen::Matrix<double, 1, 192> get_m2dp_result()
     {
         return m2dp_result;
     }
@@ -72,5 +73,5 @@ private :
     void cart2pol(double x, double y, Eigen::Vector2d &vecN);
     void pol2cart(double rho, double phi, Eigen::Vector2d &vecN);
 
-    void histogram2d(vector<Eigen::Vector2d> points, vector<double> thetaList, vector<double> rhoList, Eigen::MatrixXd &hist);
+    void histogram2d(std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d>> points, vector<double> thetaList, vector<double> rhoList, Eigen::MatrixXd &hist);
 };
